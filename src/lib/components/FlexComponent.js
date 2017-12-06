@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 
 class FlexComponent extends Component {
 
-  constructor(props) {
-    super(props)
-
+  render() {
     const {
       children,
       className,
@@ -19,7 +17,7 @@ class FlexComponent extends Component {
       xSize,
       mAlign,
       xAlign
-    } = props
+    } = this.props
 
     let childrenWithProps
 
@@ -35,8 +33,10 @@ class FlexComponent extends Component {
 
     if (row) {
       mergedStyle['flexDirection'] = 'row'
+      mergedStyle['height'] = xSize
     } else if (column) {
       mergedStyle['flexDirection'] = 'column'
+      mergedStyle['width'] = xSize
     }
 
     switch (mAlign) {
@@ -90,24 +90,21 @@ class FlexComponent extends Component {
     }
 
 
-    if (!!gap) {
-      childrenWithProps = React.Children.map(children, child =>
-        React.cloneElement(child, { 'margin': `${gap/2}`}))
-    }
+    // if (!!gap) {
+    //   childrenWithProps = React.Children.map(children, child =>
+    //     React.cloneElement(child, { 'margin': `${gap/2}`}))
+    // }
 
-    this.state = { mergedStyle };
-    console.log(this.state);
+    // this.state = { mergedStyle };
+    // console.log(this.state);
+
+
+    return (
+      <div className={className} style={mergedStyle}>
+        {gap? this.state.render : this.state.render}
+      </div>
+    )
   }
-
-  // render() {
-
-
-  //   return (
-  //     <div className={className} style={mergedStyle}>
-  //       {gap? childrenWithProps : children}
-  //     </div>
-  //   )
-  // }
 }
 
 export default FlexComponent;

@@ -32,8 +32,10 @@ const Flex = ({ children, className, style, ...props }) => {
 
   if (row) {
     mergedStyle['flexDirection'] = 'row'
+    mergedStyle['height'] = xSize
   } else if (column) {
     mergedStyle['flexDirection'] = 'column'
+    mergedStyle['width'] = xSize
   }
 
   switch (mAlign) {

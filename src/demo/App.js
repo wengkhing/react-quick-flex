@@ -5,11 +5,11 @@ import CustomComponent from './CustomComponent'
 import './App.css'
 
 const App = () => (
-  <Flex row wrap gap="20" xAlign="baseline" className="page">
+  <Flex row wrap gap="20" xSize="400px" xAlign="stretch" className="page">
     <Flex>Lorem ipsum dolor sit amet</Flex>
     <Flex>Lorem ipsum dolor sit amet</Flex>
     <CustomComponent grow></CustomComponent>
-    <CustomComponent></CustomComponent>
+    <CustomComponent mSize="300px"></CustomComponent>
   </Flex>
 );
 
