@@ -26,11 +26,12 @@ class FlexComponent extends Component {
     let mergedStyle = {
       ...!!(row || column) && { 'display': 'flex' },
       ...!!(wrap) && { 'flexWrap': wrap === 'reverse'? 'wrap-reverse' : 'wrap' },
-      ...!!mSize && { 'flexBasis': mSize },
       ...!!margin && { 'margin': `${margin}px` },
-      'flex': grow? '1 1 auto' : '0 1 auto',
+      'flex': grow? '1 1' : '0 1',
       ...style
     }
+
+    mergedStyle['flex'] += mSize? ` ${mSize}` : ' auto'
 
     if (row) {
       mergedStyle['flexDirection'] = 'row'

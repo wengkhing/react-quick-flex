@@ -9,7 +9,7 @@ const App = () => (
     <Flex>Lorem ipsum dolor sit amet</Flex>
     <Flex>Lorem ipsum dolor sit amet</Flex>
     <CustomComponent grow></CustomComponent>
-    <CustomComponent grow></CustomComponent>
+    <CustomComponent></CustomComponent>
   </Flex>
 );
 
