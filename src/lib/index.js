@@ -1,8 +1,12 @@
-import Example from './components/Example';
-import SecondExample from './components/SecondExample';
+// import Example from './components/Example';
+// import SecondExample from './components/SecondExample';
+import Flex from './components/Flex';
 
-export default Example;
-export {
-  SecondExample
-};
+import './style/reset.css';
+
+export { Flex }
+// export default Example;
+// export {
+//   SecondExample
+// };
 
