@@ -1,7 +1,7 @@
 {
-  "name": "create-react-library",
-  "version": "1.0.0",
-  "description": "React NPM library starter kit based on Facebook's create react app",
+  "name": "react-quick-flex",
+  "version": "0.1.0",
+  "description": "A quick and simple flex solution",
   "main": "build/index.js",
   "scripts": {
     "start": "node scripts/start.js",
@@ -12,7 +12,10 @@
     "type": "git",
     "url": "git+https://github.com/udiliaInc/create-react-library.git"
   },
-  "author": "Dimitri Mikadze <dimitri@udilia.com>",
+  "author": {
+    "name": "wengkhing",
+    "email": "wengkhing@gmail.com"
+  },
   "bugs": {
     "url": "https://github.com/udiliaInc/create-react-library/issues"
   },
@@ -56,6 +59,7 @@
     "react-dom": "^15.6.1",
     "react-error-overlay": "^1.0.10",
     "sass-loader": "^6.0.6",
+    "standard-version": "^4.2.0",
     "style-loader": "0.18.2",
     "sw-precache-webpack-plugin": "0.11.4",
     "url-loader": "^0.5.9",
