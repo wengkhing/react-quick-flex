@@ -1,5 +1,4 @@
 import React from 'react';
-import './Flex.scss';
 
 const Flex = ({ children, className, style, ...props }) => {
 
@@ -23,7 +22,7 @@ const Flex = ({ children, className, style, ...props }) => {
 
   const mergedStyle = {
     ...!!(row || column) && { 'display': 'flex' },
-    ...!!(wrap) && { 'flex-wrap': wrap === 'reverse'? 'wrap-reverse' : 'wrap' },
+    ...!!(wrap) && { 'flexWrap': wrap === 'reverse'? 'wrap-reverse' : 'wrap' },
     ...!!mSize && { 'flexBasis': mSize },
     ...!!margin && { 'margin': `${margin}px` },
     'flex': grow? '1 1 auto' : '0 1 auto',

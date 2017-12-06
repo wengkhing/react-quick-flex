@@ -1,12 +1,4 @@
-// import Example from './components/Example';
-// import SecondExample from './components/SecondExample';
-import Flex from './components/Flex';
+import Flex from './components/Flex'
+import FlexComponent from './components/FlexComponent'
 
-import './style/reset.css';
-
-export { Flex }
-// export default Example;
-// export {
-//   SecondExample
-// };
-
+export { Flex, FlexComponent }
