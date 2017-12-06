@@ -7,10 +7,10 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "release": "yarn release --release-as patch",
-    "release:major": "yarn release --release-as major",
-    "release:minor": "yarn release --release-as minor",
-    "release:patch": "yarn release --release-as patch"
+    "release": "yarn release:minor",
+    "release:major": "standard-version --release-as major",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch"
   },
   "repository": {
     "type": "git",
