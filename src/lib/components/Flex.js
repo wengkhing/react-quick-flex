@@ -1,11 +1,14 @@
 import React from 'react';
 
-const Flex = ({ children, className, style, ...props }) => {
+const Flex = (props) => {
 
   // xAlign accepts:
   // 'stretch', 'start', 'end', 'center', 'baseline', 'between', 'around'
 
   const {
+    children,
+    className,
+    style,
     row,
     column,
     wrap,
@@ -90,8 +93,13 @@ const Flex = ({ children, className, style, ...props }) => {
 
 
   if (!!gap) {
-    childrenWithProps = React.Children.map(children, child =>
-      React.cloneElement(child, { 'margin': `${gap/2}`}))
+    childrenWithProps = React.Children.map(children, child => {
+      return React.cloneElement(child, {
+        'margin': `${gap/2}`,
+        ...(column && child.props && child.props.xSize) && { 'width': child.props.xSize},
+        ...(row && child.props && child.props.xSize) && { 'height': child.props.xSize}
+      })
+    })
   }
 
   return (

@@ -2,11 +2,18 @@ import React, { Component } from 'react'
 
 class FlexComponent extends Component {
 
-  render() {
+  constructor(props) {
+    super(props)
+    this.makeFlexStyle()
+  }
+
+  makeFlexStyle() {
     const {
       children,
       className,
       style,
+      height,
+      width,
       row,
       column,
       wrap,
@@ -25,6 +32,8 @@ class FlexComponent extends Component {
       ...!!(row || column) && { 'display': 'flex' },
       ...!!(wrap) && { 'flexWrap': wrap === 'reverse'? 'wrap-reverse' : 'wrap' },
       ...!!margin && { 'margin': `${margin}px` },
+      ...!!height && { 'height': height },
+      ...!!width && { 'width': width },
       'flex': grow? '1 1' : '0 1',
       ...style
     }
@@ -89,22 +98,21 @@ class FlexComponent extends Component {
       }
     }
 
+    if (!!gap) {
+      childrenWithProps = React.Children.map(children, child =>
+        React.cloneElement(child, { 'margin': `${gap/2}`}))
+    }
 
-    // if (!!gap) {
-    //   childrenWithProps = React.Children.map(children, child =>
-    //     React.cloneElement(child, { 'margin': `${gap/2}`}))
-    // }
-
-    // this.state = { mergedStyle };
-    // console.log(this.state);
-
-
-    return (
-      <div className={className} style={mergedStyle}>
-        {gap? this.state.render : this.state.render}
-      </div>
-    )
+    this.state = { style: mergedStyle };
   }
+
+  // render() {
+  //   return (
+  //     <div className={className} style={mergedStyle}>
+  //       {gap? this.state.render : this.state.render}
+  //     </div>
+  //   )
+  // }
 }
 
 export default FlexComponent;
